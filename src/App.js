@@ -1,12 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Home";
+import { SocketProvider } from "./providers/Socket";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<h1>Hello</h1>}></Route>
-        <Route path="/g" element={<h1>Hell 5</h1>}></Route>
+        <SocketProvider>
+          <Route path="/" element={<Homepage />}></Route>
+        </SocketProvider>
       </Routes>
     </div>
   );
